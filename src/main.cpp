@@ -5,17 +5,22 @@
 int main() 
 {
     
-     int screenWidth = 800;
-     int screenHeight = 600;
+     int screenWidth = 600;
+     int screenHeight = 1000;
     
     InitWindow(screenWidth, screenHeight, "RAYLIB button tutorial!");
 
     SetTargetFPS(60);
 
-    Texture2D background = LoadTexture("Graphics/background.png");
-    Button startButton{"Graphics/start_button.png", {300, 150}, 0.65};
-    Button exitButton{"Graphics/exit_button.png", {300, 300}, 0.65};
-    Button randomButton{"Graphics/exit_button.png", {300, 450}, 0.65};
+    Texture2D background = LoadTexture("");
+    Button questsButton{"Graphics/menu_button.png", {0, 910}, 0.30};
+    Button tasksButton{"Graphics/menu_button.png", {150, 300}, 0.10};
+    Button storyButton{"Graphics/menu_button.png", {200, 450}, 0.10};
+    Button huntingButton{"Graphics/menu_button.png", {250, 150}, 0.10};
+    Button colectionButton{"Graphics/menu_button.png", {300, 300}, 0.10};
+    Button tentButton{"Graphics/menu_button.png", {500, 910}, 0.30};
+    
+    
 
     bool exit = false;
     
@@ -25,24 +30,42 @@ int main()
         Vector2 mousePosition = GetMousePosition();
         bool mousePressed = IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
 
-        if (startButton.isPressed(mousePosition, mousePressed)) {
-            std::cout << "Start Button Pressed" << std::endl;
+        if (questsButton.isPressed(mousePosition, mousePressed)) {
+            std::cout << "Quests Button" << std::endl;
+        }
+        else if (tasksButton.isPressed(mousePosition, mousePressed)) {
+            std::cout << "Tasks Button" << std::endl;
+        }
+        else if (storyButton.isPressed(mousePosition, mousePressed)) {
+            std::cout << "Story Button" << std::endl;
+        }
+        else if (huntingButton.isPressed(mousePosition, mousePressed)) {
+            std::cout << "Hunting Button" << std::endl;
+        }
+        else if (colectionButton.isPressed(mousePosition, mousePressed)) {
+            std::cout << "Colection Button" << std::endl;
+        }
+        else if (tentButton.isPressed(mousePosition, mousePressed)) {
+            std::cout << "Tent Button" << std::endl;
         }
 
-        if (exitButton.isPressed(mousePosition, mousePressed)) {
-            exit = true;
-        }
 
-        if (randomButton.isPressed(mousePosition, mousePressed)) {
-            exit = true;
-        }
+       
+
 
         BeginDrawing();
-            ClearBackground(BLACK);
+            ClearBackground(WHITE);
             DrawTexture(background ,0 ,0 ,WHITE);
-            startButton.Draw();
-            exitButton.Draw();
-            randomButton.Draw();
+
+            questsButton.Draw();
+            tasksButton.Draw();
+            storyButton.Draw();
+            huntingButton.Draw();
+            colectionButton.Draw();
+            tentButton.Draw();
+            DrawText("Quest", 6, 940, 30, BLACK);
+            DrawText("Tent", 513, 940, 30, BLACK);
+
         EndDrawing();
     }
     
