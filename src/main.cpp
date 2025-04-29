@@ -14,10 +14,10 @@ int main()
 
     Texture2D background = LoadTexture("");
     Button questsButton{"Graphics/menu_button.png", {0, 910}, 0.30};
-    Button tasksButton{"Graphics/menu_button.png", {150, 300}, 0.10};
-    Button storyButton{"Graphics/menu_button.png", {200, 450}, 0.10};
-    Button huntingButton{"Graphics/menu_button.png", {250, 150}, 0.10};
-    Button colectionButton{"Graphics/menu_button.png", {300, 300}, 0.10};
+    Button tasksButton{"Graphics/menu_button.png", {100, 910}, 0.30};
+    Button storyButton{"Graphics/menu_button.png", {200, 910}, 0.30};
+    Button huntingButton{"Graphics/menu_button.png", {300, 910}, 0.30};
+    Button colectionButton{"Graphics/menu_button.png", {400, 910}, 0.30};
     Button tentButton{"Graphics/menu_button.png", {500, 910}, 0.30};
     
     
@@ -64,6 +64,10 @@ int main()
             colectionButton.Draw();
             tentButton.Draw();
             DrawText("Quest", 6, 940, 30, BLACK);
+            DrawText("Tasks", 104, 940, 30, BLACK);
+            DrawText("Story", 206, 940, 30, BLACK);
+            DrawText("Hunting", 306, 942, 25, BLACK);
+            DrawText("Colection", 404, 945, 20, BLACK);
             DrawText("Tent", 513, 940, 30, BLACK);
 
         EndDrawing();
