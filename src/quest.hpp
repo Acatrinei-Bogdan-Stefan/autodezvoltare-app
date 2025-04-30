@@ -4,10 +4,9 @@
 class Quest
 {
 private:
-  /* data */
+ 
 public:
-  Quest(/* args */);
-  ~Quest();
+ 
   void Draw();
 };
 
